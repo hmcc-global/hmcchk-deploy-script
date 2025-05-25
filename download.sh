@@ -76,5 +76,7 @@ rm -rf $DEPLOY_DIR/server $DEPLOY_DIR/ui $DEPLOY_DIR/node_modules
 # Move contents from $HOME/deploy to $DEPLOY_DIR folder
 mv -f $HOME/deploy/* $DEPLOY_DIR
 
+export PATH=$PATH:/home/hmcchk/.nvm/versions/node/v16.14.2/bin/
+
 # Reload pm2
 pm2 reload 0
