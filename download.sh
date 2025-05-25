@@ -1,10 +1,10 @@
 #!/bin/bash
 
 OWNER="hmcc-global"
-REPO="hmcchk-web"
+REPO="ripple-out-worship"
 API_VERSION="2022-11-28"
 ZIP_OUTPUT="${HOME}/release.zip"
-DEPLOY_DIR="$HOME/hmcchk-web"
+DEPLOY_DIR="$HOME/ripple-out-worship"
 
 get_artifact_id() {
   local run_id="$1"
@@ -70,10 +70,10 @@ download_artifact "$artifact_id" "$git_token"
 # Decompress zip
 decompress_artifact
 
-# Delete folders from hmcchk-web/ folder as mv command cannot merge folders
+# Delete folders from $DEPLOY_DIR/ folder as mv command cannot merge folders
 rm -rf $DEPLOY_DIR/server $DEPLOY_DIR/ui $DEPLOY_DIR/node_modules
 
-# Move contents from $HOME/deploy to hmcchk-web/ folder
+# Move contents from $HOME/deploy to $DEPLOY_DIR folder
 mv -f $HOME/deploy/* $DEPLOY_DIR
 
 # Reload pm2
